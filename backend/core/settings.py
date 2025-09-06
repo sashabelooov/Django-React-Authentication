@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     #global apps
     'rest_framework',
     'corsheaders',
+    'knox',
     
 ]
 
@@ -57,6 +58,11 @@ CORS_ALLOWED_ORIGINS = [
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+AUTHENTICATION_BACKENDS = [
+    # 'users.authback.EmailBackend',
+    "django.contrib.auth.backends.ModelBackend", # this line fixed my problem
+]
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
@@ -75,6 +81,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
 
 
 # Database
