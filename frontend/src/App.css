@@ -10,47 +10,32 @@
 }
 
 .whiteBox{
-    background-color: white;
-    padding: 20px;
-    min-width: 300px;
-    height: 70%;
-    width: 25%;
-    border: 1px solid #333;
+  background-color: white;
+  padding: 20px; 
+  min-width: 300px;
+  height: 70%;
+  width: 25%;
+  border: 1px solid #333;
 }
 
-
 .itemBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
 }
 
 .title{
-    font-size: 30px;
-    color: #333;
+  font-size: 30px;
+  color: #333;
 }
 
-.myForm,
+.myForm, 
 .myButton{
-    width: 100%;
+  width: 100%;
 }
-
 
 .myButton{
   background: rgb(66, 8, 160) !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

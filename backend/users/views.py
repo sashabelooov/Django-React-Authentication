@@ -1,15 +1,12 @@
-from rest_framework import viewsets, permissions
-from .serializers import RegisterSerializer,LoginSerializer
-from .models import *
-from rest_framework.response import Response
-from django.contrib.auth import get_user_model,authenticate
+from django.shortcuts import render
+from rest_framework import viewsets, permissions 
+from .serializers import * 
+from .models import * 
+from rest_framework.response import Response 
+from django.contrib.auth import get_user_model, authenticate
 from knox.models import AuthToken
 
-
-
 User = get_user_model()
-
-
 
 class LoginViewset(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
@@ -36,7 +33,6 @@ class LoginViewset(viewsets.ViewSet):
 
 
 
-
 class RegisterViewset(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
     queryset = User.objects.all()
@@ -51,8 +47,6 @@ class RegisterViewset(viewsets.ViewSet):
             return Response(serializer.errors,status=400)
 
 
-
-
 class UserViewset(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]
     queryset = User.objects.all()
@@ -62,15 +56,3 @@ class UserViewset(viewsets.ViewSet):
         queryset = User.objects.all()
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)
-
-
-
-
-
-
-
-
-
-
-
-
